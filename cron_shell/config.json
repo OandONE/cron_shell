@@ -1,0 +1,12 @@
+{
+    "sleep": 0,
+    "log_retention": 7,
+    "timeout": 30,
+    "token": "my-secret-token-123",
+    "whitelist": [],
+    "blacklist": [
+        "rm -rf /",
+        "mkfs",
+        "dd if="
+    ]
+}
