@@ -74,7 +74,7 @@ async def index(token: str = Query(None)):
     if not verify_token(token):
         raise HTTPException(status_code=403, detail="⛔ دسترسی غیرمجاز. توکن معتبر نیست.")
     
-    html = (BASE_DIR / "static" / "panel.html").read_text(encoding="utf-8")
+    html = (BASE_DIR / "static" / "panel_fastapi.html").read_text(encoding="utf-8")
     return HTMLResponse(html)
 
 
@@ -139,5 +139,5 @@ async def websocket_endpoint(websocket: WebSocket):
 
 
 if __name__ == "__main__":
-    print("🚀 CronShell WebPanel starting on http://0.0.0.0:9999")
+    print("🚀 CronShell WebPanel (FastAPI) starting on http://0.0.0.0:9999")
     uvicorn.run(app, host="0.0.0.0", port=9999)
