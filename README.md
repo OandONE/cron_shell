@@ -102,7 +102,29 @@ python webpanel.py
 
 ---
 
-### 3. `webpanel_fastapi.py` — FastAPI WebPanel
+### 3. Set Execute Permission for runner.sh
+
+The cron job needs execute permission to run `runner.sh` :
+
+1. Open **File Manager** in cPanel
+2. Navigate to `cron_shell/`
+3. **Click once** on `runner.sh` (single click, not double)
+4. Click **Permissions** in the top toolbar
+5. Check **Execute** for **User** row:
+
+```
+User:  [✓] Read  [✓] Write  [✓] Execute
+Group: [✓] Read  [ ] Write  [ ] Execute
+World: [✓] Read  [ ] Write  [ ] Execute
+```
+
+6. Click **Change Permissions**
+
+Done. The file can now be executed by cron.
+
+---
+
+### 4. `webpanel_fastapi.py` — FastAPI WebPanel
 
 Same as Flask version, but built with **FastAPI + native WebSocket**.
 
