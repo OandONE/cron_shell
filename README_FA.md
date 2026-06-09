@@ -102,7 +102,34 @@ python webpanel.py
 
 ---
 
-### 3. `webpanel_fastapi.py` — پنل FastAPI
+
+### ۳. تنظیم دسترسی فایل runner.sh
+
+قبل از اینکه cron بتونه `runner.sh` رو اجرا کنه، باید دسترسی اجرا بهش بدی :
+
+۱. توی cPanel، وارد **File Manager** شو
+
+۲. برو توی پوشهٔ `cron_shell/`
+
+۳. روی فایل `runner.sh` **یک بار کلیک کن** (نه دابل کلیک)
+
+۴. از نوار بالای File Manager، روی **Permissions** کلیک کن
+
+۵. پنجره‌ای باز می‌شه. تیک **Execute** رو برای ردیف **User** بزن:
+
+```
+User:  [✓] Read  [✓] Write  [✓] Execute
+Group: [✓] Read  [ ] Write  [ ] Execute
+World: [✓] Read  [ ] Write  [ ] Execute
+```
+
+۶. روی **Change Permissions** کلیک کن.
+
+حالا مجوز اجرا داده شده.
+
+---
+
+### 4. `webpanel_fastapi.py` — پنل FastAPI
 
 همون پنل Flask، ولی با **FastAPI + WebSocket**.
 
